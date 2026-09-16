@@ -117,7 +117,7 @@ sudo systemctl restart ollama
 
 [!NOTE]
 > Page Assist est une extension open-source qui intègre vos modèles d’IA locaux (Ollama, LM Studio, etc.) directement dans votre navigateur via un volet latéral (sidebar) ou une interface dédiée.
-> 
+>
 
 ##### Partie 1 .Télécharger l'extension
 
@@ -322,6 +322,7 @@ RAG (Retrieval-Augmented Generation) — technique qui connecte un LLM à une ba
 
 ### THM
 
+[TryHackMe | Roylee](https://tryhackme.com/p/Roylee)
 ![IAStart](img/thm.png)
 
 ---
@@ -338,3 +339,6 @@ RAG (Retrieval-Augmented Generation) — technique qui connecte un LLM à une ba
 
 > [!NOTE]
 > Merci à Fabien, Jordan, Juninho, Lucien et Lino pour leur aide.
+
+
+[def]: https://tryhackme.com/p/Roylee
