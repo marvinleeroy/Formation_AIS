@@ -1,12 +1,12 @@
-### **Question & action à réaliser**
+# **Question & action à réaliser**
 
-##### Expliciter la procédure pas à pas pour installer un WebGUI sur votre LLM local (ubuntu)
+## Expliciter la procédure pas à pas pour installer un WebGUI sur votre LLM local (ubuntu)
 
 Pour installer un **WebUI** , on a utiliser 2 methodes qui depends du besoin et de la configuration en face (si besoin faites les deux car dispo ).
 
-###### Méthode 1 : Classique via Docker
+### Méthode 1 : Classique via Docker
 
-###### Partie 1
+#### Partie 1
 
 > [!NOTE]
 > Utilisation :
@@ -70,7 +70,7 @@ ollama run #nom de l'ia que vous vouluez
 
 ```
 
-###### Partie 2
+##### Partie 2
 
 Installation du Web Ul:
 
@@ -117,20 +117,16 @@ sudo systemctl restart ollama
 
 [!NOTE]
 > Page Assist est une extension open-source qui intègre vos modèles d’IA locaux (Ollama, LM Studio, etc.) directement dans votre navigateur via un volet latéral (sidebar) ou une interface dédiée.
->
 
 ##### Partie 1 .Télécharger l'extension
 
-Lien Chrome web store :
-<section class="link-embed" data-url="https://chromewebstore.google.com/detail/page-assist-a-web-ui-for/jfgfiigpkhlkbnfnbobbkinehhfdhndo" data-embed-type="opengraph" data-title="chromewebstore.google.com"><a href="https://chromewebstore.google.com/detail/page-assist-a-web-ui-for/jfgfiigpkhlkbnfnbobbkinehhfdhndo">chromewebstore.google.com</a></section>
+[Lien Chrome Web Store :](https://chromewebstore.google.com/detail/page-assist-a-web-ui-for/jfgfiigpkhlkbnfnbobbkinehhfdhndo)
 
-Lien Mozilla :
-<section class="link-embed" data-url="https://addons.mozilla.org/fr/firefox/addon/page-assist/" data-embed-type="opengraph" data-title="Page Assist - A Web UI for Local AI Models – Adoptez cette extension pour 🦊 Firefox (fr)" data-description="Télécharger Page Assist - A Web UI for Local AI Models pour Firefox. Use your locally running AI models to assist you in your web browsing." data-favicon="api/attachments/78XFcOyh0jZu/image/addons.mozilla.org.ico" data-image="api/attachments/gk30jCTKNYhP/image/addons.mozilla.org-page-assist-0d2451d2.jpeg"><a href="https://addons.mozilla.org/fr/firefox/addon/page-assist/">Page Assist - A Web UI for Local AI Models – Adoptez cette extension pour 🦊 Firefox (fr)</a></section>
+[Lien Mozilla🦊:](https://addons.mozilla.org/fr/firefox/addon/page-assist/)
 
-Lien Edge:
-<section class="link-embed" data-url="https://microsoftedge.microsoft.com/addons/detail/page-assist-a-web-ui-fo/ogkogooadflifpmmidmhjedogicnhooa" data-embed-type="opengraph" data-title="Page Assist - A Web UI for Local AI Models - Microsoft Edge Add-ons" data-description="Make Microsoft Edge your own with extensions that help you personalize the browser and be more productive." data-favicon="api/attachments/0dENict9bfRU/image/microsoftedge.microsoft.com.ico"><a href="https://microsoftedge.microsoft.com/addons/detail/page-assist-a-web-ui-fo/ogkogooadflifpmmidmhjedogicnhooa">Page Assist - A Web UI for Local AI Models - Microsoft Edge Add-ons</a></section>
+[Lien Edge:](https://microsoftedge.microsoft.com/addons/detail/page-assist-a-web-ui-fo/ogkogooadflifpmmidmhjedogicnhooa)
 
-_Partie 2 : Configuration Page Assist_
+##### Partie 2 : Configuration Page Assist
 
 1. Après avoir téléchargé l'extension (dans mon cas sur un navigateur Chromium), lancez-la pour accéder à l'interface :
 
@@ -153,7 +149,7 @@ Le contexte se compose généralement de trois éléments principaux :
 * L'historique de la conversation : Les messages précédents que vous et l'IA avez échangés au cours de la session.
 * Les données externes (si présentes) : Un document complet, un article de blog ou un extrait de code que vous fournissez au modèle pour qu'il l'analyse.
 
-###### Procédure
+###### Procédure de création du Modelfile
 
 1. Faire un fichier en txt dans notre cas un modelfile.txt
 
@@ -213,7 +209,7 @@ Le comportement d'une ia est normalement neutre et **généraliste**. En la modi
 
 > <!--« Impossible dans mon environnement, mais cela a fonctionné sans problème sur le serveur. »-->
 
-Image not found
+[404](img/404.png)
 
 ##### Comment forcer votre LLM local à aller chercher ce qu'il ne sait pas sur Internet, est-ce possible? et si oui comment?
 
@@ -224,7 +220,7 @@ Image not found
 
 ---
 
-# Lexique IA
+## Lexique IA
 
 * [ ] À faire
 
@@ -337,6 +333,3 @@ RAG (Retrieval-Augmented Generation) — technique qui connecte un LLM à une ba
 
 > [!NOTE]
 > Merci à Fabien, Jordan, Juninho, Lucien et Lino pour leur aide.
-
-
-[def]: https://tryhackme.com/p/Roylee
