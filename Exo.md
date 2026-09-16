@@ -1,13 +1,26 @@
-# Question & action à réaliser
+## Question & action à réaliser
 
-- [ ] À faire
+Procèdure pas à pas de la mise en place du WebGui pour le LLM.
 
-- Expliciter la procédure pas à pas pour installer un WebGUI sur votre LLM local
-- Peut on modifier le contexte d'un LLM local et si oui comment?
-- Comment faire ingérer à votre LLM local le contenu d'un dossier avec quelques PDF?
-- Comment modifier le comportement général de notre LLM Local à l'aide d'un fichier ?
-- Prouver que votre LLM local à pu ingérer correctement les données de fichiers PDF
-- Comment forcer votre LLM local à aller chercher ce qu'il ne sait pas sur Internet, est-ce possible? et si oui comment?
+Près-requis :  
+- Curl
+- ollama (avec le choix de son IA, nous avons choisi Mistral)
+- Docker
+
+Installation des certificats :
+-sudo apt update sudo apt install -y curl apt-transport-https ca-certificates gnupg lsb-release
+
+Lancement du docker :
+
+sudo docker run -d   --network=host   -v open-webui:/app/backend/data   -e OLLAMA_BASE_URL=http://127.0.0.1:11434   --name open-webui   --restart always   ghcr.io/open-webui/open-webui:main 
+
+# Comment faire ingérer à votre LLM local le contenu d'un dossier avec quelques pdf ?
+  
+# Comment modifier le comportement général de notre LLM Local à l'aide d'un fichier ?
+
+# Prouver que votre LLM local à pu ingérer correctement les données de fichiers PDF
+
+# Comment forcer votre LLM local à aller chercher ce qu'il ne sait pas sur Internet, est-ce possible? et si oui comment?
 
 ---
 
@@ -58,14 +71,10 @@
 
 ### VMWARE
 
-- [x] Fait
-
 ![Pacquets Installés](img/deb.png)
 
 ---
 
 ### WSL
-
-- [x] Fait
 
 ![Distri wsl](img/wsl.png)
