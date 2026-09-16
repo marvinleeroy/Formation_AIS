@@ -60,6 +60,6 @@
 
 - [x] Fait
 
-![Pacquets Installés](img/schema.png)
+![Pacquets Installés](img/deb.png)
 
 ---
