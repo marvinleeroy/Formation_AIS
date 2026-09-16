@@ -323,6 +323,7 @@ RAG (Retrieval-Augmented Generation) — technique qui connecte un LLM à une ba
 ### THM
 
 [TryHackMe | Roylee](https://tryhackme.com/p/Roylee)
+
 ![IAStart](img/thm.png)
 
 ---
