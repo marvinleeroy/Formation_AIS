@@ -1,4 +1,4 @@
-### Question & action à réaliser
+# Question & action à réaliser
 
 - [ ] À faire
 
@@ -11,7 +11,7 @@
 
 ---
 
-### Lexique IA
+## Lexique IA
 
 - [ ] À faire
 
