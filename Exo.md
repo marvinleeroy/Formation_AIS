@@ -122,15 +122,12 @@ sudo systemctl restart ollama
 ##### Partie 1 .Télécharger l'extension
 
 Lien Chrome web store :
-
 <section class="link-embed" data-url="https://chromewebstore.google.com/detail/page-assist-a-web-ui-for/jfgfiigpkhlkbnfnbobbkinehhfdhndo" data-embed-type="opengraph" data-title="chromewebstore.google.com"><a href="https://chromewebstore.google.com/detail/page-assist-a-web-ui-for/jfgfiigpkhlkbnfnbobbkinehhfdhndo">chromewebstore.google.com</a></section>
 
 Lien Mozilla :
-
 <section class="link-embed" data-url="https://addons.mozilla.org/fr/firefox/addon/page-assist/" data-embed-type="opengraph" data-title="Page Assist - A Web UI for Local AI Models – Adoptez cette extension pour 🦊 Firefox (fr)" data-description="Télécharger Page Assist - A Web UI for Local AI Models pour Firefox. Use your locally running AI models to assist you in your web browsing." data-favicon="api/attachments/78XFcOyh0jZu/image/addons.mozilla.org.ico" data-image="api/attachments/gk30jCTKNYhP/image/addons.mozilla.org-page-assist-0d2451d2.jpeg"><a href="https://addons.mozilla.org/fr/firefox/addon/page-assist/">Page Assist - A Web UI for Local AI Models – Adoptez cette extension pour 🦊 Firefox (fr)</a></section>
 
 Lien Edge:
-
 <section class="link-embed" data-url="https://microsoftedge.microsoft.com/addons/detail/page-assist-a-web-ui-fo/ogkogooadflifpmmidmhjedogicnhooa" data-embed-type="opengraph" data-title="Page Assist - A Web UI for Local AI Models - Microsoft Edge Add-ons" data-description="Make Microsoft Edge your own with extensions that help you personalize the browser and be more productive." data-favicon="api/attachments/0dENict9bfRU/image/microsoftedge.microsoft.com.ico"><a href="https://microsoftedge.microsoft.com/addons/detail/page-assist-a-web-ui-fo/ogkogooadflifpmmidmhjedogicnhooa">Page Assist - A Web UI for Local AI Models - Microsoft Edge Add-ons</a></section>
 
 _Partie 2 : Configuration Page Assist_
