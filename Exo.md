@@ -52,7 +52,7 @@
 
 ### THM
 
-- [ ] À faire
+![IAStart](img/thm.png)
 
 ---
 
