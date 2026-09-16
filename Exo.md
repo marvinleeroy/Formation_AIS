@@ -2,7 +2,6 @@
 
 - [ ] À faire
 
-
 - Expliciter la procédure pas à pas pour installer un WebGUI sur votre LLM local
 - Peut on modifier le contexte d'un LLM local et si oui comment?
 - Comment faire ingérer à votre LLM local le contenu d'un dossier avec quelques PDF?
@@ -12,11 +11,9 @@
 
 ---
 
-
 ### Lexique IA
 
 - [ ] À faire
-
 
 - Inférence
 - RAG
@@ -40,7 +37,7 @@
 - Hallucination
 - Embedding
 - Token
-- European AI Act 
+- European AI Act
 - Prompt
 - Algorithme
 - Test de Turing
@@ -51,9 +48,9 @@
 - Deep Learning
 - Données
 
-
 ---
-## THM 
+
+## THM
 
 - [ ] À faire
 
