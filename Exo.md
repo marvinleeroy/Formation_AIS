@@ -1,28 +1,28 @@
-# Question & action à réaliser
+### **Question & action à réaliser**
 
+##### Expliciter la procédure pas à pas pour installer un WebGUI sur votre LLM local (ubuntu)
 
+Pour installer un **WebUI** , on a utiliser 2 methodes qui depends du besoin et de la configuration en face (si besoin faites les deux car dispo ).
 
-## Comment faire ingérer à votre LLM local le contenu d'un dossier avec quelques pdf ?
-  Question & action à réaliser
- 
+###### Méthode 1 : Classique via Docker
 
-Expliciter la procédure pas à pas pour installer un WebGUI sur votre LLM local (ubuntu)
-Pour installer un WebUI , on a utiliser 2 methodes qui depends du besoin et de la configuration en face (si besoin faites les deux car dispo ).
+###### Partie 1 :
 
-Méthode 1 : Classique via Docker
-Partie 1 :
-Utilisation : 
-
-Disponible sur tout les appareils qui sont sur le même réseaux que le serveurs WebUI.
+> [!NOTE]
+> Utilisation : 
+> 
+> Disponible sur tout les appareils qui sont sur le même réseaux que le serveurs WebUI.
 
 Prérequis :
 
-Les services Ollama et docker lancés.
+> [!IMPORTANT]
+> Les services Ollama et docker lancés.
+> 
+> Sinon plus bas pour les installer.
 
-Sinon plus bas pour les installer.
+Installation de Docker ( [Doc Officiel](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)) : 
 
-Installation de Docker ( Doc Officiel) : 
-
+```sh
 # Installationn des paquet requis (ca-certificates= permet à curl de vérifier que la connexion HTTPS/ curl = télécharger des fichiers ou des clés depuis Internet en CLI) + Mises a jour Completes du Systemes
 sudo apt update && sudo apt full-upgrade -y
 sudo apt install ca-certificates curl
@@ -47,8 +47,12 @@ sudo apt update
 
 # Installation maintenant de tout les composant de Dockers
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-Installation de Ollama (Doc Officiel) :
 
+```
+
+Installation de Ollama ([Doc Officiel](https://docs.ollama.com/linux)) :
+
+```sh
 # Installationn des paquet requis (curl = télécharger des fichiers ou des clés depuis Internet en CLI)
 sudo apt update && sudo apt full-upgrade -y
 sudo apt install ca-certificates curl
@@ -63,9 +67,14 @@ ollama pull #nom de l'ia que vous vouluez
 
 # Exécute une instance IA ( après l'avoir pull)
 ollama run #nom de l'ia que vous vouluez
-Partie 2 :
-Installation du Web Ul: 
 
+```
+
+###### Partie 2 :
+
+Installation du Web Ul: 
+
+```sh
 sudo docker run -d \
   --network=host \
   -v open-webui:/app/backend/data \
@@ -73,61 +82,148 @@ sudo docker run -d \
   --name open-webui \
   --restart always \
   ghcr.io/open-webui/open-webui:main
+```
+
 Partie 3 :
 
-Accéder à l'interface
+###### Accéder à l'interface
+
 Ouvrez votre navigateur sur :
 
-En local : http://localhost:8080 ( sur le serveur uniquement)
-Depuis une autre machine du réseau : http://<IP_DE_VOTRE_SERVEUR>:8080
-(Le premier compte créé sur l'interface sera automatiquement l'administrateur).
+*   En local : [`http://localhost:8080`](http://localhost:8080) ( sur le serveur uniquement)
+*   Depuis une autre machine du réseau : `http://<IP_DE_VOTRE_SERVEUR>:8080`
 
-Méthode 2: Page Assist sur navigateur (seulement sur pc)
-Prérequis:
+_(Le premier compte créé sur l'interface sera automatiquement l'administrateur)._
 
-sudo ss -tulpn | grep 11434
+#### _Méthode 2: Page Assist sur navigateur (seulement sur pc)_
+
+_Prérequis:_
+
+```sh
+# Force Ollama à écouter sur toutes les interfaces réseau 
 sudo mkdir -p /etc/systemd/system/ollama.service.d
-sudo nano /etc/systemd/system/ollama.service.d/override.conf
-[Service]
+sudo cat > /etc/systemd/system/ollama.service.d/override.conf<<EOL [Service]
 
 Environment="OLLAMA_HOST=0.0.0.0"
 
 Environment="OLLAMA_ORIGINS=*"
+
+EOL
+
+# Redémarre le services ollama 
 sudo systemctl daemon-reload
-
 sudo systemctl restart ollama
- 
+```
 
-Page Assist est une extension open-source qui intègre vos modèles d’IA locaux (Ollama, LM Studio, etc.) directement dans votre navigateur via un volet latéral (sidebar) ou une interface dédiée.
+> [!NOTE]
+> Page Assist est une extension open-source qui intègre vos modèles d’IA locaux (Ollama, LM Studio, etc.) directement dans votre navigateur via un volet latéral (sidebar) ou une interface dédiée.
 
-Partie 1 .Télécharger l'extension : 
-Lien Chrome web store : 
+##### Partie 1 .Télécharger l'extension : 
 
- 
- 
+Lien Chrome web store : 
+
+<section class="link-embed" data-url="https://chromewebstore.google.com/detail/page-assist-a-web-ui-for/jfgfiigpkhlkbnfnbobbkinehhfdhndo" data-embed-type="opengraph" data-title="chromewebstore.google.com"><a href="https://chromewebstore.google.com/detail/page-assist-a-web-ui-for/jfgfiigpkhlkbnfnbobbkinehhfdhndo">chromewebstore.google.com</a></section>
 
 Lien Mozilla :
 
- 
- 
+<section class="link-embed" data-url="https://addons.mozilla.org/fr/firefox/addon/page-assist/" data-embed-type="opengraph" data-title="Page Assist - A Web UI for Local AI Models – Adoptez cette extension pour 🦊 Firefox (fr)" data-description="Télécharger Page Assist - A Web UI for Local AI Models pour Firefox. Use your locally running AI models to assist you in your web browsing." data-favicon="api/attachments/78XFcOyh0jZu/image/addons.mozilla.org.ico" data-image="api/attachments/gk30jCTKNYhP/image/addons.mozilla.org-page-assist-0d2451d2.jpeg"><a href="https://addons.mozilla.org/fr/firefox/addon/page-assist/">Page Assist - A Web UI for Local AI Models – Adoptez cette extension pour 🦊 Firefox (fr)</a></section>
 
-Lien Edge: 
+Lien Edge: 
 
- 
- 
+<section class="link-embed" data-url="https://microsoftedge.microsoft.com/addons/detail/page-assist-a-web-ui-fo/ogkogooadflifpmmidmhjedogicnhooa" data-embed-type="opengraph" data-title="Page Assist - A Web UI for Local AI Models - Microsoft Edge Add-ons" data-description="Make Microsoft Edge your own with extensions that help you personalize the browser and be more productive." data-favicon="api/attachments/0dENict9bfRU/image/microsoftedge.microsoft.com.ico"><a href="https://microsoftedge.microsoft.com/addons/detail/page-assist-a-web-ui-fo/ogkogooadflifpmmidmhjedogicnhooa">Page Assist - A Web UI for Local AI Models - Microsoft Edge Add-ons</a></section>
 
-Partie 2 : Configuration Page Assist
+_Partie 2 : Configuration Page Assist_
 
-Apres a voir télécharger l'extension (dans mon cas sur un chromium), Lancez la pour acceder a la d'acces:
+1.  Après avoir téléchargé l'extension (dans mon cas sur un navigateur Chromium), lancez-la pour accéder à l'interface :
 
-suite à venir : 
+![GuiPA](img/p1.png)
 
+2.  _Configuration du Page assist pour la sync entre Ul et Ollama_
 
-## Comment modifier le comportement général de notre LLM Local à l'aide d'un fichier ?
+![Conf](img/p2.png)
 
-## Prouver que votre LLM local à pu ingérer correctement les données de fichiers PDF
+![Conf_Suite](img/p3.png)
 
-## Comment forcer votre LLM local à aller chercher ce qu'il ne sait pas sur Internet, est-ce possible? et si oui comment?
+##### Peut on modifier le contexte d'un LLM local et si oui comment?
+
+**Contexte** : Le contexte d'un LLM désigne l'ensemble des informations textuelles que le modèle est capable de lire, de "garder en mémoire" et de traiter en une seule fois pour générer sa réponse.  
+Pour faire une analogie humaine, le contexte est l'équivalent de la mémoire à court terme ou de la taille du bureau sur lequel le modèle travaille.
+
+Le contexte se compose généralement de trois éléments principaux :
+
+*   Le prompt système (System Prompt) : Les instructions de base données au modèle (ex: "Tu es un traducteur bilingue").
+*   L'historique de la conversation : Les messages précédents que vous et l'IA avez échangés au cours de la session.
+*   Les données externes (si présentes) : Un document complet, un article de blog ou un extrait de code que vous fournissez au modèle pour qu'il l'analyse.
+
+###### Procédure : 
+
+1.  Faire un fichier en txt dans notre cas un modelfile.txt
+
+![T1](img/t1.png)
+
+2.  Ensuite modifier avec ces paramètres :
+
+![T2](img/t2.png)
+
+> [!NOTE]
+> `**FROM mistral:7b**` : Utilise le modèle de base Mistral 7B ( changez le modèle selon votre modèle).
+> 
+> `**PARAMETER num_ctx 8192**` : Augmente la fenêtre de contexte à **8 192 tokens** _(par défaut sur Ollama, elle est souvent bridée à 2 048)_. Cela permet au modèle de se souvenir d'un historique de conversation plus long ou d'analyser des documents plus volumineux _(attention : consomme un peu plus de VRAM/RAM)_.
+
+3.  ```sh
+     ollama create mistral-modified -f ./modelfile.txt
+    ```
+    
+    Permet d'ensuite d'utiliser ensuite le modelfile pour faire une copie de votre modèle avec le nom que vous aurez choisi avec une nouvelle instance.
+
+##### Comment faire ingérer à votre LLM local le contenu d'un dossier avec quelques PDF?
+
+Pour ajouter directement des fichiers, insérez-les dans l'interface web (par exemple dans Page Assist) : 
+
+![T3](img/t3.png)
+
+##### Comment modifier le comportement général de notre LLM Local à l'aide d'un fichier ?
+
+Le comportement d'une ia est normalement neutre et **généraliste**. En la modifiant , cela permet de changer sa manière de changer, son degré de liberté (créativité vs logique),sa posture / son rôle, son style et son ton ou ses limites et interdictions.
+
+###### Procédure : 
+
+1.  Faire un fichier en txt dans notre cas un modelfile.txt
+
+![S1](img/s1.png)
+
+2.  Ensuite modifier avec ces paramètres :
+
+![S2](img/s2.png)
+
+ [!NOTE]
+> `**FROM mistral:7b**` : Utilise le modèle de base Mistral 7B ( changez le modèle selon votre modèle).
+> 
+> `**PARAMETER num_ctx 8192**` : Augmente la fenêtre de contexte à **8 192 tokens** _(par défaut sur Ollama, elle est souvent bridée à 2 048)_. Cela permet au modèle de se souvenir d'un historique de conversation plus long ou d'analyser des documents plus volumineux _(attention : consomme un peu plus de VRAM/RAM)_.
+> 
+> `**SYSTEM "..."**` : Définit la consigne système (le comportement/ton de l'IA).
+
+3.  ```sh
+    ollama create mistral-modified -f ./modelfile.txt
+    
+    ```
+
+> [!TIP]
+> Permet d'ensuite d'utiliser ensuite le modelfile pour faire une copie de votre modèle avec le nom que vous aurez choisi avec une nouvelle instance
+
+##### Prouver que votre LLM local à pu ingérer correctement les données de fichiers PDF
+
+> <!--« Impossible dans mon environnement, mais cela a fonctionné sans problème sur le serveur. »-->
+
+Image not found 
+
+##### Comment forcer votre LLM local à aller chercher ce qu'il ne sait pas sur Internet, est-ce possible? et si oui comment?
+
+> > <!--« Impossible dans mon environnement, mais cela a fonctionné sans problème sur le serveur. »-->  
+> Voila comment faire .
+
+![Q1](img/q1.png)
+
 
 ---
 
@@ -173,6 +269,8 @@ suite à venir :
 ### THM
 
 ![IAStart](img/thm.png)
+
+
 
 ---
 
