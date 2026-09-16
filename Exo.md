@@ -337,3 +337,7 @@ RAG (Retrieval-Augmented Generation) — technique qui connecte un LLM à une ba
 ### WSL
 
 ![Distri wsl](img/wsl.png)
+
+
+> [!NOTE]
+> Merci à Fabien, Jordan, Juninho, Lucien et Lino pour leur aide.
