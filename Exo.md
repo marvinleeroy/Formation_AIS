@@ -6,21 +6,21 @@ Pour installer un **WebUI** , on a utiliser 2 methodes qui depends du besoin et 
 
 ###### Méthode 1 : Classique via Docker
 
-###### Partie 1 :
+###### Partie 1
 
 > [!NOTE]
-> Utilisation : 
-> 
+> Utilisation :
+>
 > Disponible sur tout les appareils qui sont sur le même réseaux que le serveurs WebUI.
 
 Prérequis :
 
 > [!IMPORTANT]
 > Les services Ollama et docker lancés.
-> 
+>
 > Sinon plus bas pour les installer.
 
-Installation de Docker ( [Doc Officiel](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)) : 
+Installation de Docker ( [Doc Officiel](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)) :
 
 ```sh
 # Installationn des paquet requis (ca-certificates= permet à curl de vérifier que la connexion HTTPS/ curl = télécharger des fichiers ou des clés depuis Internet en CLI) + Mises a jour Completes du Systemes
@@ -70,9 +70,9 @@ ollama run #nom de l'ia que vous vouluez
 
 ```
 
-###### Partie 2 :
+###### Partie 2
 
-Installation du Web Ul: 
+Installation du Web Ul:
 
 ```sh
 sudo docker run -d \
@@ -90,8 +90,8 @@ Partie 3 :
 
 Ouvrez votre navigateur sur :
 
-*   En local : [`http://localhost:8080`](http://localhost:8080) ( sur le serveur uniquement)
-*   Depuis une autre machine du réseau : `http://<IP_DE_VOTRE_SERVEUR>:8080`
+* En local : [`http://localhost:8080`](http://localhost:8080) ( sur le serveur uniquement)
+* Depuis une autre machine du réseau : `http://<IP_DE_VOTRE_SERVEUR>:8080`
 
 _(Le premier compte créé sur l'interface sera automatiquement l'administrateur)._
 
@@ -115,12 +115,13 @@ sudo systemctl daemon-reload
 sudo systemctl restart ollama
 ```
 
-> [!NOTE]
+[!NOTE]
 > Page Assist est une extension open-source qui intègre vos modèles d’IA locaux (Ollama, LM Studio, etc.) directement dans votre navigateur via un volet latéral (sidebar) ou une interface dédiée.
+> 
 
-##### Partie 1 .Télécharger l'extension : 
+##### Partie 1 .Télécharger l'extension
 
-Lien Chrome web store : 
+Lien Chrome web store :
 
 <section class="link-embed" data-url="https://chromewebstore.google.com/detail/page-assist-a-web-ui-for/jfgfiigpkhlkbnfnbobbkinehhfdhndo" data-embed-type="opengraph" data-title="chromewebstore.google.com"><a href="https://chromewebstore.google.com/detail/page-assist-a-web-ui-for/jfgfiigpkhlkbnfnbobbkinehhfdhndo">chromewebstore.google.com</a></section>
 
@@ -128,17 +129,17 @@ Lien Mozilla :
 
 <section class="link-embed" data-url="https://addons.mozilla.org/fr/firefox/addon/page-assist/" data-embed-type="opengraph" data-title="Page Assist - A Web UI for Local AI Models – Adoptez cette extension pour 🦊 Firefox (fr)" data-description="Télécharger Page Assist - A Web UI for Local AI Models pour Firefox. Use your locally running AI models to assist you in your web browsing." data-favicon="api/attachments/78XFcOyh0jZu/image/addons.mozilla.org.ico" data-image="api/attachments/gk30jCTKNYhP/image/addons.mozilla.org-page-assist-0d2451d2.jpeg"><a href="https://addons.mozilla.org/fr/firefox/addon/page-assist/">Page Assist - A Web UI for Local AI Models – Adoptez cette extension pour 🦊 Firefox (fr)</a></section>
 
-Lien Edge: 
+Lien Edge:
 
 <section class="link-embed" data-url="https://microsoftedge.microsoft.com/addons/detail/page-assist-a-web-ui-fo/ogkogooadflifpmmidmhjedogicnhooa" data-embed-type="opengraph" data-title="Page Assist - A Web UI for Local AI Models - Microsoft Edge Add-ons" data-description="Make Microsoft Edge your own with extensions that help you personalize the browser and be more productive." data-favicon="api/attachments/0dENict9bfRU/image/microsoftedge.microsoft.com.ico"><a href="https://microsoftedge.microsoft.com/addons/detail/page-assist-a-web-ui-fo/ogkogooadflifpmmidmhjedogicnhooa">Page Assist - A Web UI for Local AI Models - Microsoft Edge Add-ons</a></section>
 
 _Partie 2 : Configuration Page Assist_
 
-1.  Après avoir téléchargé l'extension (dans mon cas sur un navigateur Chromium), lancez-la pour accéder à l'interface :
+1. Après avoir téléchargé l'extension (dans mon cas sur un navigateur Chromium), lancez-la pour accéder à l'interface :
 
 ![GuiPA](img/p1.png)
 
-2.  _Configuration du Page assist pour la sync entre Ul et Ollama_
+1. _Configuration du Page assist pour la sync entre Ul et Ollama_
 
 ![Conf](img/p2.png)
 
@@ -151,34 +152,34 @@ Pour faire une analogie humaine, le contexte est l'équivalent de la mémoire à
 
 Le contexte se compose généralement de trois éléments principaux :
 
-*   Le prompt système (System Prompt) : Les instructions de base données au modèle (ex: "Tu es un traducteur bilingue").
-*   L'historique de la conversation : Les messages précédents que vous et l'IA avez échangés au cours de la session.
-*   Les données externes (si présentes) : Un document complet, un article de blog ou un extrait de code que vous fournissez au modèle pour qu'il l'analyse.
+* Le prompt système (System Prompt) : Les instructions de base données au modèle (ex: "Tu es un traducteur bilingue").
+* L'historique de la conversation : Les messages précédents que vous et l'IA avez échangés au cours de la session.
+* Les données externes (si présentes) : Un document complet, un article de blog ou un extrait de code que vous fournissez au modèle pour qu'il l'analyse.
 
-###### Procédure : 
+###### Procédure
 
-1.  Faire un fichier en txt dans notre cas un modelfile.txt
+1. Faire un fichier en txt dans notre cas un modelfile.txt
 
 ![T1](img/t1.png)
 
-2.  Ensuite modifier avec ces paramètres :
+1. Ensuite modifier avec ces paramètres :
 
 ![T2](img/t2.png)
 
 > [!NOTE]
 > `**FROM mistral:7b**` : Utilise le modèle de base Mistral 7B ( changez le modèle selon votre modèle).
-> 
+>
 > `**PARAMETER num_ctx 8192**` : Augmente la fenêtre de contexte à **8 192 tokens** _(par défaut sur Ollama, elle est souvent bridée à 2 048)_. Cela permet au modèle de se souvenir d'un historique de conversation plus long ou d'analyser des documents plus volumineux _(attention : consomme un peu plus de VRAM/RAM)_.
 
-3.  ```sh
+1. ```sh
      ollama create mistral-modified -f ./modelfile.txt
     ```
-    
+
     Permet d'ensuite d'utiliser ensuite le modelfile pour faire une copie de votre modèle avec le nom que vous aurez choisi avec une nouvelle instance.
 
 ##### Comment faire ingérer à votre LLM local le contenu d'un dossier avec quelques PDF?
 
-Pour ajouter directement des fichiers, insérez-les dans l'interface web (par exemple dans Page Assist) : 
+Pour ajouter directement des fichiers, insérez-les dans l'interface web (par exemple dans Page Assist) :
 
 ![T3](img/t3.png)
 
@@ -186,24 +187,24 @@ Pour ajouter directement des fichiers, insérez-les dans l'interface web (par ex
 
 Le comportement d'une ia est normalement neutre et **généraliste**. En la modifiant , cela permet de changer sa manière de changer, son degré de liberté (créativité vs logique),sa posture / son rôle, son style et son ton ou ses limites et interdictions.
 
-###### Procédure : 
+###### Procédure
 
-1.  Faire un fichier en txt dans notre cas un modelfile.txt
+1. Faire un fichier en txt dans notre cas un modelfile.txt
 
 ![S1](img/s1.png)
 
-2.  Ensuite modifier avec ces paramètres :
+1. Ensuite modifier avec ces paramètres :
 
 ![S2](img/s2.png)
 
  [!NOTE]
 > `**FROM mistral:7b**` : Utilise le modèle de base Mistral 7B ( changez le modèle selon votre modèle).
-> 
+>
 > `**PARAMETER num_ctx 8192**` : Augmente la fenêtre de contexte à **8 192 tokens** _(par défaut sur Ollama, elle est souvent bridée à 2 048)_. Cela permet au modèle de se souvenir d'un historique de conversation plus long ou d'analyser des documents plus volumineux _(attention : consomme un peu plus de VRAM/RAM)_.
-> 
+>
 > `**SYSTEM "..."**` : Définit la consigne système (le comportement/ton de l'IA).
 
-3.  ```sh
+1. ```sh
     ollama create mistral-modified -f ./modelfile.txt
     
     ```
@@ -215,7 +216,7 @@ Le comportement d'une ia est normalement neutre et **généraliste**. En la modi
 
 > <!--« Impossible dans mon environnement, mais cela a fonctionné sans problème sur le serveur. »-->
 
-Image not found 
+Image not found
 
 ##### Comment forcer votre LLM local à aller chercher ce qu'il ne sait pas sur Internet, est-ce possible? et si oui comment?
 
@@ -224,45 +225,44 @@ Image not found
 
 ![Q1](img/q1.png)
 
-
 ---
 
 # Lexique IA
 
-- [ ] À faire
+* [ ] À faire
 
-- Inférence
-- RAG
-- ChatBot : 
-- Paramètre
-- DataSet
-- Agent IA
-- Modèle
-- Réseau de Neurones
-- Machine Learning :les systèmes apprennent des motifs à partir des données plutôt que d'être programmés explicitement
-- NLP
-- Qwen
-- Deep Learning : sous catégorie du ML utilisant des réseaux de neurones à plusieurs couches
-- GPT
-- IA Adpatative
-- IA Générale
-- Ollama
-- IA Générative
-- Singularité Technologique
-- LLM
-- Hallucination
-- Embedding
-- Token
-- European AI Act
-- Prompt
-- Algorithme
-- Test de Turing
-- Big Data
-- Biais
-- ModelFile
-- SystemPrompt
-- Deep Learning
-- Données
+* Inférence
+* RAG
+* ChatBot :
+* Paramètre
+* DataSet
+* Agent IA
+* Modèle
+* Réseau de Neurones
+* Machine Learning :les systèmes apprennent des motifs à partir des données plutôt que d'être programmés explicitement
+* NLP
+* Qwen
+* Deep Learning : sous catégorie du ML utilisant des réseaux de neurones à plusieurs couches
+* GPT
+* IA Adpatative
+* IA Générale
+* Ollama
+* IA Générative
+* Singularité Technologique
+* LLM
+* Hallucination
+* Embedding
+* Token
+* European AI Act
+* Prompt
+* Algorithme
+* Test de Turing
+* Big Data
+* Biais
+* ModelFile
+* SystemPrompt
+* Deep Learning
+* Données
 
 <!--#### _**Glossaire**_
 
@@ -324,8 +324,6 @@ RAG (Retrieval-Augmented Generation) — technique qui connecte un LLM à une ba
 
 ![IAStart](img/thm.png)
 
-
-
 ---
 
 ### VMWARE
@@ -337,7 +335,6 @@ RAG (Retrieval-Augmented Generation) — technique qui connecte un LLM à une ba
 ### WSL
 
 ![Distri wsl](img/wsl.png)
-
 
 > [!NOTE]
 > Merci à Fabien, Jordan, Juninho, Lucien et Lino pour leur aide.
