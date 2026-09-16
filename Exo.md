@@ -50,16 +50,22 @@
 
 ---
 
-## THM
+### THM
 
 - [ ] À faire
 
 ---
 
-## VMWARE
+### VMWARE
 
 - [x] Fait
 
 ![Pacquets Installés](img/deb.png)
 
 ---
+
+### WSL
+
+- [x] Fait
+
+![Distri wsl](img/wsl.png)
