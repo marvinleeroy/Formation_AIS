@@ -115,16 +115,16 @@ sudo systemctl daemon-reload
 sudo systemctl restart ollama
 ```
 
-[!NOTE]
+>[!NOTE]
 > Page Assist est une extension open-source qui intègre vos modèles d’IA locaux (Ollama, LM Studio, etc.) directement dans votre navigateur via un volet latéral (sidebar) ou une interface dédiée.
 
 ##### Partie 1 .Télécharger l'extension
 
-[Lien Chrome Web Store :](https://chromewebstore.google.com/detail/page-assist-a-web-ui-for/jfgfiigpkhlkbnfnbobbkinehhfdhndo)
+[Lien Chrome Web Store](https://chromewebstore.google.com/detail/page-assist-a-web-ui-for/jfgfiigpkhlkbnfnbobbkinehhfdhndo)
 
-[Lien Mozilla🦊:](https://addons.mozilla.org/fr/firefox/addon/page-assist/)
+[Lien Mozilla🦊](https://addons.mozilla.org/fr/firefox/addon/page-assist/)
 
-[Lien Edge:](https://microsoftedge.microsoft.com/addons/detail/page-assist-a-web-ui-fo/ogkogooadflifpmmidmhjedogicnhooa)
+[Lien Edge](https://microsoftedge.microsoft.com/addons/detail/page-assist-a-web-ui-fo/ogkogooadflifpmmidmhjedogicnhooa)
 
 ##### Partie 2 : Configuration Page Assist
 
@@ -190,7 +190,7 @@ Le comportement d'une ia est normalement neutre et **généraliste**. En la modi
 
 ![S2](img/s2.png)
 
- [!NOTE]
+>[!NOTE]
 > `**FROM mistral:7b**` : Utilise le modèle de base Mistral 7B ( changez le modèle selon votre modèle).
 >
 > `**PARAMETER num_ctx 8192**` : Augmente la fenêtre de contexte à **8 192 tokens** _(par défaut sur Ollama, elle est souvent bridée à 2 048)_. Cela permet au modèle de se souvenir d'un historique de conversation plus long ou d'analyser des documents plus volumineux _(attention : consomme un peu plus de VRAM/RAM)_.
